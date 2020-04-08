@@ -1,0 +1,28 @@
+<!-- # flask tutorial Form Validation - Forms in Templates -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+            <div class="col-md-8">
+                                 
+                <div class="text-center bg-secondary p-2 h4">Вход</div>
+                {% include "_messages.html" %} 
+
+                {% from "_formhelpers.html" import render_field %} 
+                <form method=post>
+                <div> 
+
+                    {{ render_field(form.email, class="form-control") }}
+                    {{ render_field(form.password, class="form-control") }}
+
+                </div>
+                <p><input type="submit" value="Войти" class="btn btn-outline-secondary"></p>
+                </form>
+            </div>
+      <div class="col-md-2"></div>
+    </div>
+</div>
+{% endblock content %}
